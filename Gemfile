@@ -9,4 +9,9 @@ end
 
 group :development do
   gem 'sinatra'
+  gem 'shotgun'
+end
+
+group :development, :test do
+  gem 'pg'
 end
