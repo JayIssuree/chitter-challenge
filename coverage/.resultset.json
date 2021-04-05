@@ -1,7 +1,19 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/jayissuree/Desktop/Makers 2021/week4/chitter-challenge/spec/features/homepage_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      }
     },
-    "timestamp": 1617614345
+    "timestamp": 1617615046
   }
 }
