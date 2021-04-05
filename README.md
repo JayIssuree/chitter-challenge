@@ -133,23 +133,3 @@ SimpleCov.start
 ```
 
 You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
-
-
-### To set up the database
-
-Connect to `psql` and create the `bookmark_manager` and 'bookmark_manager_test' databases:
-
-```
-CREATE DATABASE chitter;
-CREATE DATABASE chitter_test;
-```
-
-Connect to the databases with:
-
-```
-\c chitter;
-OR
-\c chitter_test;
-```
-
-To set up the appropriate tables, connect to the database in `psql` and run the SQL scripts in the `db/migrations` folder in the given order. Repeat for both development and test databases.
