@@ -26,4 +26,12 @@ describe "creating peeps", type: :feature do
         expect(page).to have_selector("ul li:nth-child(3)", text: "this peep should appear last")
     end
 
+    it "displays the time and date a peep was made" do
+        visit('/')
+        fill_in("peep_text", with: "time & date peep")
+        time = Time.now
+        click_button("Peep!")
+        expect(page).to have_content(time.strftime("%A %d %B at %k:%M"))
+    end
+
 end
