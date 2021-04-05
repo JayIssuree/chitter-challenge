@@ -1,6 +1,26 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/jayissuree/Desktop/Makers 2021/week4/chitter-challenge/spec/features/creating_peeps_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/jayissuree/Desktop/Makers 2021/week4/chitter-challenge/spec/features/homepage_spec.rb": {
         "lines": [
           1,
@@ -14,6 +34,6 @@
         ]
       }
     },
-    "timestamp": 1617615046
+    "timestamp": 1617621308
   }
 }

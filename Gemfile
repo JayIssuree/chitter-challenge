@@ -12,5 +12,8 @@ group :development do
 end
 
 group :development, :test do
-
+  gem 'activerecord'
+  gem 'pg'
+  gem 'sinatra-activerecord'
+  gem 'rake'
 end

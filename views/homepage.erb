@@ -1,1 +1,16 @@
-<h1> Welcome to Chitter! <h1>
+<h1> Welcome to Chitter! </h1>
+
+<div>
+    <form action=/peep method=post>
+        <input type=text name='peep_text'>
+        <input type=submit value=Peep!>
+    </form>
+</div>
+
+<div>
+    <ul>
+    <% @peeps.each do |peep| %>
+        <li> <%= peep.content %> <li>
+    <% end %>
+    </ul>
+</div>

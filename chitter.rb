@@ -1,4 +1,6 @@
 require 'sinatra'
+require 'sinatra/activerecord'
+require './models/peep'
 
 class Chitter < Sinatra::Base
 
@@ -7,7 +9,16 @@ class Chitter < Sinatra::Base
     end
     
     get '/chitter' do
+        @peeps = Peep.all
         erb(:homepage)
     end
+
+    post '/peep' do
+        Peep.create(content: params[:peep_text])
+        redirect '/chitter'
+    end
+
+
+    run! if app_file == $0
 
 end

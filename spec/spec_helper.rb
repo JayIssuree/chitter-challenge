@@ -1,3 +1,5 @@
+ENV['RACK_ENV'] = 'test'
+
 require './chitter'
 require 'capybara/rspec'
 require 'simplecov'
