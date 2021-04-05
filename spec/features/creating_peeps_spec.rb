@@ -13,4 +13,17 @@ describe "creating peeps", type: :feature do
         expect(page).to have_content("this is an example peep")
     end
 
+    it "displays peeps in reverse chronological order" do
+        visit('/')
+        fill_in("peep_text", with: "this peep should appear last")
+        click_button("Peep!")
+        fill_in("peep_text", with: "this peep should appear second")
+        click_button("Peep!")
+        fill_in("peep_text", with: "this peep should appear first")
+        click_button("Peep!")
+        expect(page).to have_selector("ul li:nth-child(1)", text: "this peep should appear first")
+        expect(page).to have_selector("ul li:nth-child(2)", text: "this peep should appear second")
+        expect(page).to have_selector("ul li:nth-child(3)", text: "this peep should appear last")
+    end
+
 end

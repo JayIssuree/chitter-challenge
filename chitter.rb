@@ -9,7 +9,7 @@ class Chitter < Sinatra::Base
     end
     
     get '/chitter' do
-        @peeps = Peep.all
+        @peeps = Peep.all.sort_by(&:created_at).reverse
         erb(:homepage)
     end
 
