@@ -13,6 +13,7 @@ end
 
 group :development, :test do
   gem 'activerecord'
+  gem 'bcrypt'
   gem 'pg'
   gem 'sinatra-activerecord'
   gem 'rake'
