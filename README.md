@@ -133,3 +133,18 @@ SimpleCov.start
 ```
 
 You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+
+### To set up the database
+
+Connect to `psql` and create the `chitter` and `chitter_test` databases:
+
+```
+CREATE DATABASE chitter;
+CREATE DATABASE chitter_test;
+```
+
+Run the following in the command line to execute the files in db/migrate in order to create the peeps and users tables
+
+```
+rake db:migrate
+```
