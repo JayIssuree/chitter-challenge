@@ -6,6 +6,7 @@ require './models/user'
 
 class Chitter < Sinatra::Base
 
+    use Rack::MethodOverride
     enable :sessions
     register Sinatra::Flash
 
@@ -54,6 +55,11 @@ class Chitter < Sinatra::Base
             flash[:notice] = 'Incorrect username or password'
             redirect '/session/new'
         end
+    end
+
+    delete '/session' do
+        session.clear
+        redirect '/chitter'
     end
 
 
