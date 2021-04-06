@@ -26,6 +26,25 @@ describe "signing up", type: :feature do
         expect(page).to have_content("Welcome, username")
     end
 
-    # unique username
+    it "displays an error message when the password does not match the confirmation" do
+        visit('/')
+        click_button("Sign Up")
+        fill_in("username", with: "username")
+        fill_in("password", with: "password123")
+        fill_in("password_confirmation", with: "not confirmed")
+        click_button("Create Account")
+        expect(page).to have_content('Username already taken or passwords do not match')
+    end
+
+    it "displays an error message when the username is already taken" do
+        User.create(username: 'username123', password: 'password123')
+        visit('/')
+        click_button("Sign Up")
+        fill_in("username", with: "username123")
+        fill_in("password", with: "word of passing")
+        fill_in("password_confirmation", with: "word of passing")
+        click_button("Create Account")
+        expect(page).to have_content('Username already taken or passwords do not match')
+    end
 
 end

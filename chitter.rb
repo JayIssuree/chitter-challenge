@@ -1,11 +1,13 @@
 require 'sinatra'
 require 'sinatra/activerecord'
+require 'sinatra/flash'
 require './models/peep'
 require './models/user'
 
 class Chitter < Sinatra::Base
 
     enable :sessions
+    register Sinatra::Flash
 
     get '/' do
         redirect '/chitter'
@@ -33,6 +35,7 @@ class Chitter < Sinatra::Base
             redirect '/chitter'
         else
             session[:user_id] = nil
+            flash[:notice] = 'Username already taken or passwords do not match'
             redirect '/users/new'
         end
     end
@@ -48,6 +51,7 @@ class Chitter < Sinatra::Base
             redirect '/chitter'
         else
             session[:user_id] = nil
+            flash[:notice] = 'Incorrect username or password'
             redirect '/session/new'
         end
     end

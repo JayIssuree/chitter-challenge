@@ -16,5 +16,6 @@ group :development, :test do
   gem 'bcrypt'
   gem 'pg'
   gem 'sinatra-activerecord'
+  gem 'sinatra-flash'
   gem 'rake'
 end

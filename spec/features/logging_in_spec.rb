@@ -24,5 +24,14 @@ describe "logging in", type: :feature do
         expect(page.current_path).to eq('/chitter')
         expect(page).to have_content('Welcome, username123')
     end
+
+    it "displays a flash notice on unsuccessful log in" do
+        visit('/')
+        click_button('Log In')
+        fill_in("username", with: 'username123')
+        fill_in("password", with: 'password123')
+        click_button("Log In")
+        expect(page).to have_content("Incorrect username or password")
+    end
     
 end
